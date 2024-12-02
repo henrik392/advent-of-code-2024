@@ -1,5 +1,6 @@
-mod day01;
 mod day_trait;
+mod day01;
+mod day02;
 
 use day_trait::Day;
 
