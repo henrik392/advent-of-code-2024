@@ -2,13 +2,13 @@ use crate::day_trait::Day;
 mod part1;
 mod part2;
 
-pub struct Day01;
-impl Day for Day01 {
-    fn part1(&self) -> i32 {
+pub struct Day02;
+impl Day for Day02 {
+    fn part1(&self) -> String {
         part1::solve()
     }
 
-    fn part2(&self) -> i32 {
+    fn part2(&self) -> String {
         part2::solve()
     }
 }

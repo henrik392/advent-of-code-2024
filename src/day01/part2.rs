@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-pub fn solve() -> i32 {
+pub fn solve() -> String {
     let (mut vec1, mut vec2) = super::get_input();
     vec1.sort();
     vec2.sort();
@@ -15,5 +15,5 @@ pub fn solve() -> i32 {
         sum += vec1[i]*freq_map.get(&vec1[i]).unwrap_or(&0);
     }
 
-    sum
+    sum.to_string()
 }

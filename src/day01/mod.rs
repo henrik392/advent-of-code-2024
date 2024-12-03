@@ -4,11 +4,11 @@ mod part2;
 
 pub struct Day01;
 impl Day for Day01 {
-    fn part1(&self) -> i32 {
+    fn part1(&self) -> String {
         part1::solve()
     }
 
-    fn part2(&self) -> i32 {
+    fn part2(&self) -> String {
         part2::solve()
     }
 }

@@ -1,12 +1,23 @@
-mod day_trait;
 mod day01;
 mod day02;
+mod day03;
+mod day_trait;
 
 use day_trait::Day;
+use std::fs;
+
+fn write_result_to_file(day_num: u32, part: u32, result: &str) {
+    let output_dir = format!("output/day{:02}", day_num);
+    let output_file = format!("{}/part{:02}.txt", output_dir, part);
+    fs::create_dir_all(&output_dir).expect("Unable to create directories");
+    fs::write(output_file, result).expect("Unable to write file");
+}
 
 fn print_day(day_num: u32, part: u32) {
-    let day = match day_num {
-        1 => day01::Day01,
+    let day: Box<dyn Day> = match day_num {
+        1 => Box::new(day01::Day01),
+        2 => Box::new(day02::Day02),
+        3 => Box::new(day03::Day03),
         _ => panic!("Day not implemented"),
     };
 
@@ -16,13 +27,12 @@ fn print_day(day_num: u32, part: u32) {
         _ => panic!("Part not implemented"),
     };
 
+    // Write the result to the output file
+    write_result_to_file(day_num, part, &result);
+
     println!("Day {:02} Part {:02}: {}", day_num, part, result);
 }
 
 fn main() {
-    print_day(1, 1);
-    print_day(1, 2);
+    print_day(3, 1);
 }
-
-
-

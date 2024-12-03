@@ -1,4 +1,4 @@
-pub(crate) fn solve() -> i32 {
+pub fn solve() -> String {
     let (mut vec1, mut vec2) = super::get_input();
     vec1.sort();
     vec2.sort();
@@ -8,5 +8,5 @@ pub(crate) fn solve() -> i32 {
         sum += (vec1[i] - vec2[i]).abs();
     }
 
-    sum
+    sum.to_string()
 }
