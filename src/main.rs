@@ -36,5 +36,5 @@ fn print_day(day_num: u32, part: u32) {
 }
 
 fn main() {
-    print_day(4, 1);
+    print_day(4, 2);
 }
