@@ -13,9 +13,21 @@ impl Day for Day05 {
     }
 }
 
-pub fn get_input() -> (Vec<(i32, i32)>, Vec<Vec<i32>>) {
-    let str_input = include_str!("input.txt");
+type InputData = (Vec<(i32, i32)>, Vec<Vec<i32>>);
 
+#[allow(dead_code)]
+pub fn get_input() -> InputData {
+    let input = include_str!("input.txt");
+    parse_input(input)
+}
+
+#[allow(dead_code)]
+pub fn test_input() -> InputData {
+    let input = include_str!("test.txt");
+    parse_input(input)
+}
+
+fn parse_input(str_input: &str) -> InputData {
     let lines: Vec<&str> = str_input.lines().collect();
     let mut page_rules: Vec<(i32, i32)> = vec![];
     let mut updates: Vec<Vec<i32>> = vec![];
