@@ -2,6 +2,8 @@ mod day01;
 mod day02;
 mod day03;
 mod day04;
+mod day05;
+
 mod day_trait;
 
 use day_trait::Day;
@@ -20,6 +22,7 @@ fn print_day(day_num: u32, part: u32) {
         2 => Box::new(day02::Day02),
         3 => Box::new(day03::Day03),
         4 => Box::new(day04::Day04),
+        5 => Box::new(day05::Day05),
         _ => panic!("Day not implemented"),
     };
 
@@ -36,5 +39,5 @@ fn print_day(day_num: u32, part: u32) {
 }
 
 fn main() {
-    print_day(4, 2);
+    print_day(5, 1);
 }
