@@ -13,7 +13,7 @@ impl Day for Day07 {
     }
 }
 
-type InputData = Vec<(i32, Vec<i32>)>;
+type InputData = Vec<(i64, Vec<i64>)>;
 
 #[allow(dead_code)]
 pub fn get_input() -> InputData {
@@ -33,12 +33,12 @@ fn parse_input(str_input: &str) -> InputData {
         .map(|line| {
             // first split ':', then split space
             let mut parts = line.split(':').collect::<Vec<&str>>();
-            let sum = parts[0].parse::<i32>().unwrap();
+            let sum = parts[0].parse::<i64>().unwrap();
             let mut nums = vec![];
             if parts.len() > 1 {
                 let nums_str = parts[1].trim().split(' ').collect::<Vec<&str>>();
                 for num_str in nums_str {
-                    nums.push(num_str.parse::<i32>().unwrap());
+                    nums.push(num_str.parse::<i64>().unwrap());
                 }
             }
             (sum, nums)
