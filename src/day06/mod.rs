@@ -29,7 +29,7 @@ pub fn test_input() -> InputData {
 
 fn parse_input(str_input: &str) -> InputData {
     let mut guard_position = (0, 0);
-    
+
     for (i, row) in str_input.lines().enumerate() {
         for (j, cell) in row.chars().enumerate() {
             if cell == '^' {
@@ -37,11 +37,11 @@ fn parse_input(str_input: &str) -> InputData {
             }
         }
     }
-    
+
     let map = str_input
         .lines()
         .map(|line| line.chars().map(|c| c == '#').collect())
         .collect();
-    
+
     (map, guard_position)
 }
