@@ -28,6 +28,7 @@ fn print_day(day_num: u32, part: u32) {
         5 => Box::new(day05::Day05),
         6 => Box::new(day06::Day06),
         7 => Box::new(day07::Day07),
+        8 => Box::new(day08::Day08),
         _ => panic!("Day not implemented"),
     };
 
@@ -44,6 +45,5 @@ fn print_day(day_num: u32, part: u32) {
 }
 
 fn main() {
-    print_day(7, 1);
-    print_day(7, 2);
+    print_day(8, 1);
 }
