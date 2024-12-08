@@ -31,7 +31,15 @@ impl Map {
         }
     }
 
-    pub fn point_within_map(&self, point: (i32, i32)) -> bool {
+    pub fn verify_point(&self, point: (i32, i32)) -> Option<Point> {
+        if self.point_within_map(point) {
+            Some((point.0 as u8, point.1 as u8))
+        } else {
+            None
+        }
+    }
+
+    fn point_within_map(&self, point: (i32, i32)) -> bool {
         let (x, y) = point;
         x >= 0 && x < self.width as i32 && y >= 0 && y < self.height as i32
     }

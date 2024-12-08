@@ -20,12 +20,9 @@ pub fn solve() -> String {
                     antenna2.1 as i32 + point_diff.1,
                 );
 
-                if !map.point_within_map(antinode_pos) {
-                    continue;
+                if let Some(antinode) = map.verify_point(antinode_pos) {
+                    antinodes.insert(antinode);
                 }
-
-                let antinode_pos = (antinode_pos.0 as u8, antinode_pos.1 as u8);
-                antinodes.insert(antinode_pos);
             }
         }
     }
